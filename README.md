@@ -1,16 +1,26 @@
-# React + Vite
+# RankMaster Pro SEO Tools
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+RankMaster Pro is a browser-based SEO workspace built with React and Vite.
 
-Currently, two official plugins are available:
+## Built-in tools
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Keyword ideas planner** — generates long-tail ideas from up to 10 seed phrases and exports them to CSV.
+- **Keyword clustering** — groups a pasted keyword list by a basic search-intent heuristic.
+- **On-page content checker** — reviews title and description lengths, target phrase use, and draft word count.
+- **HTML SEO audit** — checks pasted HTML for common metadata, heading, image, link, and indexing basics.
 
-## React Compiler
+The built-in tools run locally in the browser. They do not retrieve live search volume, backlinks, or Google rankings. The resource pages link to Google Keyword Planner, Ahrefs, Semrush, and Google Trends for provider-side research.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development
 
-## Expanding the Oxlint configuration
+```sh
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Validation
+
+```sh
+npm run lint
+npm run build
+```
