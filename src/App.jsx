@@ -57,6 +57,15 @@ function App() {
           <h3>+28.6%</h3>
           <span>Quarter over quarter</span>
         </div>
+
+        <a
+          className="external-link"
+          href="https://directyp.org/4/6fd01df714f02809c481c6a469f37d16"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit DirectYP
+        </a>
       </aside>
 
       <main className="main-panel">

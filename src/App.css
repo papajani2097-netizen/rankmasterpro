@@ -134,6 +134,18 @@ button {
   font-size: 0.9rem;
 }
 
+.external-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #8ae2ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.external-link:hover {
+  color: white;
+}
+
 .main-panel {
   padding: 32px;
 }
