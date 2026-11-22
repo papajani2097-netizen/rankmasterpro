@@ -681,6 +681,7 @@ function App() {
         <footer className="app-footer">
           <span>RankMaster Pro</span>
           <span>Built-in analyses are estimates and do not replace live search data.</span>
+          <a href="https://forseomasterpro.netlify.app/" target="_blank" rel="noopener noreferrer">Smartlink</a>
         </footer>
       </main>
     </div>
