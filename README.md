@@ -24,3 +24,7 @@ npm run dev
 npm run lint
 npm run build
 ```
+
+## GitHub Pages deployment
+
+The GitHub Actions workflow deploys the site to GitHub Pages whenever changes are pushed to `main`. Enable GitHub Pages for the repository with **Build and deployment → Source: GitHub Actions**. The project is configured for the `/rankmasterpro/` project-site path, including direct links to app routes.

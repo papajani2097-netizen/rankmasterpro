@@ -1,6 +1,15 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
+const appBasePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function getRoutePathname() {
+  const pathname = window.location.pathname
+  return appBasePath && pathname.startsWith(appBasePath)
+    ? pathname.slice(appBasePath.length) || '/'
+    : pathname
+}
+
 const tools = [
   {
     path: '/tools/keyword-ideas',
@@ -173,7 +182,7 @@ function auditHtml(markup) {
 function InternalLink({ href, onNavigate, className = '', children, ...props }) {
   return (
     <a
-      href={href}
+      href={`${appBasePath}${href}`}
       className={className}
       onClick={(event) => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
@@ -572,20 +581,20 @@ function ResourcePage({ resource }) {
 }
 
 function App() {
-  const [pathname, setPathname] = useState(() => window.location.pathname)
+  const [pathname, setPathname] = useState(getRoutePathname)
   const currentPath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
   const currentResource = resources.find((resource) => resource.path === currentPath)
   const currentTool = tools.find((tool) => tool.path === currentPath)
 
   function navigate(path) {
     if (path === currentPath) return
-    window.history.pushState({}, '', path)
+    window.history.pushState({}, '', `${appBasePath}${path}`)
     setPathname(path)
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
 
   useEffect(() => {
-    const handlePopState = () => setPathname(window.location.pathname)
+    const handlePopState = () => setPathname(getRoutePathname())
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
